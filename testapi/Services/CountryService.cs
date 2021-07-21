@@ -86,5 +86,17 @@ namespace testapi.Services
 
             return true;
         }
+        public async Task<bool> DeleteForName(int id)
+        {
+            Country upd = await _ctx.Countries.FirstOrDefaultAsync(e => e.IdCountry == id);
+            if (upd == null)
+            {
+                return await Task.FromException<bool>(new Exception("No encontrado"));
+            }
+            _ctx.Countries.Remove(upd);
+            await _ctx.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

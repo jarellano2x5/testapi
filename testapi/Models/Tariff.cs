@@ -9,6 +9,6 @@ namespace testapi.Models
         public bool Active { get; set; }
         public short IdCountry { get; set; }
 
-        public virtual Country Country { get; set; }
+        // public virtual Country Country { get; set; }
     }
 }

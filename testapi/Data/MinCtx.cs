@@ -73,10 +73,12 @@ namespace testapi.Data
                 entity.Property(e => e.Name).IsRequired()
                     .HasMaxLength(30).IsUnicode(false);
 
+                /*
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.Tariffies)
                     .HasForeignKey(d => d.IdCountry)
                     .HasConstraintName("FK_Tariff_Country");
+                */
             });
 
             builder.Entity<Tipe>(entity =>
